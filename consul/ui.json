@@ -1,0 +1,17 @@
+{
+  "ui": true,
+  "client_addr": "0.0.0.0",
+  "enable_script_checks": false,
+  "disable_remote_exec": true,
+  "verify_incoming": false,
+  "verify_incoming_rpc": true,
+  "verify_outgoing": true,
+  "verify_server_hostname": true,
+  "ca_file": "/home/ubuntu/consul-agent-ca.pem",
+  "cert_file": "/home/ubuntu/dc1-server-consul.pem",
+  "key_file": "/home/ubuntu/dc1-server-consul.key.pem",
+  "ports": {
+    "http": -1,
+    "https": 8501
+  }
+}
