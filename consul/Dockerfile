@@ -7,8 +7,8 @@ WORKDIR /home/ubuntu/
 ENV CONSUL_HTTP_ADDR https://server.dc1.cluster.local:8501
 
 
-RUN wget https://releases.hashicorp.com/consul/1.5.2/consul_1.5.2_linux_amd64.zip
-RUN unzip consul_1.5.2_linux_amd64.zip
+RUN wget https://releases.hashicorp.com/consul/1.5.3/consul_1.5.3_linux_amd64.zip
+RUN unzip consul_1.5.3_linux_amd64.zip
 RUN mv consul /usr/bin
 
 RUN mkdir /etc/consul.d/

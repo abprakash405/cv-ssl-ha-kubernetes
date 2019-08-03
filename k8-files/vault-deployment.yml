@@ -28,13 +28,17 @@ spec:
                 fieldPath: metadata.namespace
         args:
           - "agent"
+          - "-bind=0.0.0.0"
           - "-retry-join=consul-0.consul.$(NAMESPACE).svc.cluster.local"
           - "-retry-join=consul-1.consul.$(NAMESPACE).svc.cluster.local"
           - "-retry-join=consul-2.consul.$(NAMESPACE).svc.cluster.local"
-          - "-domain=cluster.local"
+          - "-client=0.0.0.0"
+          - "-config-file=/etc/consul.d/ui.json"
           - "-datacenter=dc1"
+          - "-domain=cluster.local"
+          - "-ui"
           - "-disable-host-node-id"
-#          - "-node=vault-1"
-          - "-data-dir=/home/ubuntu"
+          - "-data-dir=/home/ubuntu/consul"
+
       imagePullSecrets:
       - name: secret-bhanu

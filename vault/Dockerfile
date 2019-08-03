@@ -5,9 +5,13 @@ apt-get install unzip wget curl vim -y
 WORKDIR /home/ubuntu/
 
 ENV VAULT_ADDR https://server.dc1.cluster.local:8200
+ENV api_addr "https://server.dc1.cluster.local:8200"
+ENV cluster_addr "https://server.dc1.cluster.local:8201"
+ENV CONSUL_HTTP_ADDR https://server.dc1.cluster.local:8500
 
-RUN wget https://releases.hashicorp.com/vault/1.1.3/vault_1.1.3_linux_amd64.zip
-RUN unzip vault_1.1.3_linux_amd64.zip
+
+RUN wget https://releases.hashicorp.com/vault/1.2.0/vault_1.2.0_linux_amd64.zip
+RUN unzip vault_1.2.0_linux_amd64.zip
 RUN mv vault /usr/bin
 
 RUN mkdir /etc/vault
