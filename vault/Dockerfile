@@ -4,10 +4,10 @@ apt-get install unzip wget curl vim -y
 
 WORKDIR /home/ubuntu/
 
-ENV VAULT_ADDR https://server.dc1.cluster.local:8200
-ENV api_addr "https://server.dc1.cluster.local:8200"
-ENV cluster_addr "https://server.dc1.cluster.local:8201"
-ENV CONSUL_HTTP_ADDR https://server.dc1.cluster.local:8500
+ENV VAULT_ADDR https://server.dc1.consul:8200
+ENV api_addr "https://server.dc1.consul:8200"
+ENV cluster_addr "https://server.dc1.consul:8201"
+ENV CONSUL_HTTP_ADDR https://server.dc1.consul:8500
 
 
 RUN wget https://releases.hashicorp.com/vault/1.2.0/vault_1.2.0_linux_amd64.zip
@@ -24,4 +24,4 @@ COPY config.hcl /etc/vault/config.hcl
 
 COPY hosts /tmp/hosts
 
-CMD cat /tmp/hosts >> /etc/hosts; export VAULT_ADDR=https://server.dc1.cluster.local:8200; /usr/bin/vault server -config=/etc/vault/config.hcl
+CMD cat /tmp/hosts >> /etc/hosts; /usr/bin/vault server -config=/etc/vault/config.hcl

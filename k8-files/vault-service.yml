@@ -11,5 +11,9 @@ spec:
       targetPort: 8200
       protocol: TCP
       name: vault
+    - port: 8443
+      targetPort: 8443
+      protocol: TCP
+      name: ssl
   selector:
     app: vault

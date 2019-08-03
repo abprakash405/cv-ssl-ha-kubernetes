@@ -5,6 +5,9 @@ apt-get install unzip wget curl vim -y
 WORKDIR /home/ubuntu/
 
 ENV CONSUL_HTTP_ADDR https://server.dc1.cluster.local:8501
+ENV VAULT_ADDR https://server.dc1.cluster.local:8200
+ENV api_addr "https://server.dc1.cluster.local:8200"
+ENV cluster_addr "https://server.dc1.cluster.local:8201"
 
 
 RUN wget https://releases.hashicorp.com/consul/1.5.3/consul_1.5.3_linux_amd64.zip

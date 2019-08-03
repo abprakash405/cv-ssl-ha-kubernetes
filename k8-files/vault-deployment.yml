@@ -5,7 +5,7 @@ metadata:
   labels:
     app: vault
 spec:
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
@@ -34,8 +34,8 @@ spec:
           - "-retry-join=consul-2.consul.$(NAMESPACE).svc.cluster.local"
           - "-client=0.0.0.0"
           - "-config-file=/etc/consul.d/ui.json"
-          - "-datacenter=dc1"
-          - "-domain=cluster.local"
+         # - "-datacenter=dc1"
+         # - "-domain=cluster.local"
           - "-ui"
           - "-disable-host-node-id"
           - "-data-dir=/home/ubuntu/consul"
